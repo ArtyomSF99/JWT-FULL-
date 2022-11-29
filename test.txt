@@ -1,0 +1,10 @@
+{
+    "login": "artemgulgulan@gmail.com",
+    "password": "ARTYOM1000",
+    "first_name": "Artyom",
+    "last_name": "Gulgulyan",
+    "email": "artemgulgulan@gmail.com",
+    "phone": "99999999",
+    "region": " Ararat"
+    
+}

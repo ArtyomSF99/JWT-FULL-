@@ -1,0 +1,24 @@
+CREATE DATABASE score
+////////////////////////////
+CREATE TABLE users
+(
+    Id SERIAL PRIMARY KEY,
+    status CHARACTER VARYING(20) DEFAULT 'user',
+    login CHARACTER VARYING(100) UNIQUE,
+    password TEXT,
+    first_name CHARACTER VARYING(50),
+    last_name CHARACTER VARYING(50),
+    email CHARACTER VARYING(100),
+    phone CHARACTER VARYING(30),
+    region CHARACTER VARYING(20),
+    is_activated BOOLEAN DEFAULT FALSE,
+    activate_link CHARACTER VARYING(100)
+);
+///////////////////////
+CREATE TABLE token
+(
+    Id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    refresh_token TEXT,
+    FOREIGN KEY (user_id) REFERENCES users (Id)
+);
