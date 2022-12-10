@@ -4,7 +4,6 @@ const router = new Router()
 const {check} = require('express-validator')
 const authMiddleware = require('../middlewares/auth_middleware')
 
-
 router.post('/registration',[
     check('login', "Логин не должен быть пустым").notEmpty(),
     check('password', "Пароль не должен быть пустым").notEmpty()    
@@ -14,6 +13,7 @@ router.post('/logout', authController.logout)
 router.get('/activate/:link', authController.active)
 router.get('/refresh', authController.refresh)
 router.get('/users', authMiddleware, authController.getUsers)
+
 
 
 module.exports = router

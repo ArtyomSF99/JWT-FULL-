@@ -13,7 +13,9 @@ app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 
-
+app.get('/hello', (req,res) => {
+    res.send('Hello, server is worked')
+})
 app.use('/', authRouter)
 
 app.use(errorMiddleware)
